@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import './header-style';
 
 import Button from '../Button/Button';
@@ -9,9 +10,12 @@ const logStuff = () => {
 
 const Header = () => {
   return (
-    <div className="Header">
-      <h1>Sam's Header</h1>
-      <Button handleClick={() => logStuff()} />
+    <div>
+      <section className="container-header">
+        <h1>Chuckle Norris</h1>
+        <h4>The internet's most Delta Farce joke machine.</h4>
+      </section>
+      <Button btnText={<Link to='/settings'> Settings </Link>} />
     </div>
   );
 }
