@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = (props) => {
   return (
-    <button onClick={() => props.handleClick() }>Sam's Button</button>
+    <button onClick={() => props.handleClick() }>{props.btnText}</button>
   );
 }
 

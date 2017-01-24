@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --watch",
-    "test": "mocha -w --compilers js:babel-core/register --require helpers/test-setup.js app/**/*.spec.js"
+    "test": "mocha -w --compilers js:babel-core/register --require helpers/test-setup.js app/**/*.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-router": "^3.0.2",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.7",
     "style-loader": "^0.13.1",
