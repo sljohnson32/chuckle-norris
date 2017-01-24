@@ -9,8 +9,11 @@ const logStuff = () => {
 
 const Header = () => {
   return (
-    <div className="Header">
-      <h1>Sam's Header</h1>
+    <div>
+      <section className="container-header">
+        <h1>Chuckle Norris</h1>
+        <h4>The internet's most Delta Farce joke machine.</h4>
+      </section>
       <Button handleClick={() => logStuff()} />
     </div>
   );
