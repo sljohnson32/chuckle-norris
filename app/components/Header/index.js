@@ -4,18 +4,14 @@ import './header-style';
 
 import Button from '../Button';
 
-const logStuff = () => {
-  console.log("clicked!");
-}
-
 const Header = () => {
   return (
-    <div>
+    <div className='header'>
       <section className="container-header">
         <h1>Chuckle Norris</h1>
         <h4>The internet's most Delta Farce joke machine.</h4>
       </section>
-      <Button btnText={<Link to='/settings'> Settings </Link>} />
+      <Button name={'settings-btn'} btnText={<Link to='/settings'> Settings </Link>} />
     </div>
   );
 }
