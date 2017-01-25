@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       randomJoke: '',
-      num: '',
+      newName: '',
+      displayName: ''
     };
   }
 
@@ -22,8 +23,12 @@ class App extends Component {
     })
   }
 
-  handleChange(newVal) {
-    this.setState({ num: newVal });
+  updateName(newName) {
+    this.setState({ newName });
+  }
+
+  setDisplayName() {
+    this.setState({ displayName: this.state.newName });
   }
 
   render() {
@@ -32,7 +37,11 @@ class App extends Component {
         <Header />
         <RandomJoke randomJoke={this.state.randomJoke} />
         <div className='app-stuff'>
-          {React.cloneElement(this.props.children, { handleChange: this.handleChange.bind(this), num: this.state.num })}
+        {React.cloneElement(this.props.children, {
+          newName: this.state.newName,
+          updateName: this.updateName.bind(this),
+          setDisplayName: this.setDisplayName.bind(this)
+        })}
         </div>
       </div>
     );

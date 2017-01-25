@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Input = (props) => {
-  const { name, handleChange, num } = props;
+  const { name, type, handleChange, val } = props;
   return (
     <input
-      className={name}
-      type='number'
-      value={num}
+      className={ name }
+      type={ type }
+      value={ val }
       onChange={ (e) => handleChange(e.target.value) }
     />
   );

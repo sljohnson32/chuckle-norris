@@ -11,8 +11,8 @@ import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="jokes" component={Jokes} />
+      <IndexRoute component={Home}/>
+        <Route path="/jokes" component={Jokes} />
       <Route path="favorites" component={Favs} />
       <Route path="settings" component={Settings} />
     </Route>

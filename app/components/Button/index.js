@@ -1,9 +1,17 @@
 import React from 'react';
 
 const Button = (props) => {
-  const { name, btnText } = props;
+  const { name, func, btnText } = props;
   return (
-    <button className={name}>{btnText}</button>
+    func ?
+      <button
+        className={name}
+        onClick={ () => func() }
+      >{btnText}</button>
+      :
+      <button
+        className={name}
+      >{btnText}</button>
   );
 }
 
