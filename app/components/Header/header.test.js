@@ -3,8 +3,8 @@ import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
 import sinon from 'sinon';
 
-import Header from './Header';
-import Button from '../Button/Button';
+import Header from './index';
+import Button from '../Button';
 
 describe('<Header/>', function () {
   it('should display a single h1 tag', function () {

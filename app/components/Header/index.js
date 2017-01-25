@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './header-style';
 
-import Button from '../Button/Button';
+import Button from '../Button';
 
 const logStuff = () => {
   console.log("clicked!");
