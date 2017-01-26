@@ -3,7 +3,6 @@ import './button-style';
 
 const Button = (props) => {
   const { name, func, btnText, disableTrigger } = props;
-  console.log(disableTrigger)
   return (
     func ?
       <button

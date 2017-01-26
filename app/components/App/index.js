@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Header from '../Header'
 import RandomJoke from '../RandomJoke'
+import firstName from './Logic/firstName'
+import lastName from './Logic/lastName'
+import buildURL from './Logic/buildURL'
 import '../../styles'
 
 class App extends Component {
@@ -11,7 +14,7 @@ class App extends Component {
       randomJoke: '',
       jokes: '',
       newName: '',
-      displayName: '',
+      displayName: 'Chuck Norris',
       num: '',
       favJokes: [],
       parentalControls: false
@@ -29,9 +32,13 @@ class App extends Component {
 
   getJokes() {
     const num = this.state.num;
-    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript`).then((response) => {
+    const first = firstName(this.state.displayName);
+    const last = lastName(this.state.displayName);
+    const controls = this.state.parentalControls ? '&exclude=[explicit]' : '';
+    const name = this.state.displayName ? `&firstName=${first}&lastName=${last}` : '';
+
+    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript${controls}${name}`).then((response) => {
       return response.json();
-      debugger
     }).then((data) => {
       this.setState({ jokes: data.value })
     })
