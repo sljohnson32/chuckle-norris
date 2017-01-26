@@ -13,7 +13,8 @@ class App extends Component {
       newName: '',
       displayName: '',
       num: '',
-      favJokes: []
+      favJokes: [],
+      parentalControls: false
     };
   }
 
@@ -50,6 +51,10 @@ class App extends Component {
 
   clearDisplayName() {
     this.setState({ displayName: '' })
+  }
+
+  updateControls() {
+    this.setState({ parentalControls: !this.state.parentalControls })
   }
 
   setFav(favJoke) {
@@ -89,7 +94,9 @@ class App extends Component {
           getJokes: this.getJokes.bind(this),
           jokes: this.state.jokes,
           setFav: this.setFav.bind(this),
-          favJokes: this.state.favJokes
+          favJokes: this.state.favJokes,
+          parentalControls: this.state.parentalControls,
+          updateControls: this.updateControls.bind(this)
         })}
         </div>
       </div>

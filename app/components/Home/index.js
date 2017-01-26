@@ -5,8 +5,10 @@ import Input from '../Input';
 
 class Home extends Component {
 
+
   render() {
     const { handleChange, num, getJokes } = this.props;
+    console.log(num)
     return (
       <div>
         <section className="joke-controller">
