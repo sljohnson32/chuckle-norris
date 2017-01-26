@@ -1,9 +1,21 @@
 import React from 'react';
+import './button-style';
 
 const Button = (props) => {
-  const { name, btnText } = props;
+  const { name, func, btnText, disableTrigger } = props;
+  console.log(disableTrigger)
   return (
-    <button className={name}>{btnText}</button>
+    func ?
+      <button
+        className={ name }
+        disabled={disableTrigger}
+        onClick={ () => func() }
+      >{ btnText }</button>
+      :
+      <button
+        className={ name }
+        disabled={disableTrigger}
+      >{ btnText }</button>
   );
 }
 

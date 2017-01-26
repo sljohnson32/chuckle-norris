@@ -6,7 +6,28 @@
 }
 .container-header h1 {
   font-family: 'Bungee Shade', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   color: white;
   padding-bottom: 10px;
 }
+/*button.settings-btn {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rga(192, 192, 192);
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+  }
+}*/
+
+
+
+/*&:disabled {
+  color: gray;
+  cursor: default;
+  background-color: $button-background;
+}*/

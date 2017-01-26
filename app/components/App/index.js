@@ -9,7 +9,12 @@ class App extends Component {
     super();
     this.state = {
       randomJoke: '',
+      jokes: '',
+      newName: '',
+      displayName: '',
       num: '',
+      favJokes: [],
+      parentalControls: false
     };
   }
 
@@ -22,8 +27,54 @@ class App extends Component {
     })
   }
 
-  handleChange(newVal) {
+  getJokes() {
+    const num = this.state.num;
+    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript`).then((response) => {
+      return response.json();
+      debugger
+    }).then((data) => {
+      this.setState({ jokes: data.value })
+    })
+  }
+
+  handleNumChange(newVal) {
     this.setState({ num: newVal });
+  }
+
+  updateName(newName) {
+    this.setState({ newName });
+  }
+
+  setDisplayName() {
+    this.setState({ displayName: this.state.newName });
+  }
+
+  clearDisplayName() {
+    this.setState({ displayName: '' })
+  }
+
+  updateControls() {
+    this.setState({ parentalControls: !this.state.parentalControls })
+  }
+
+  setFav(favJoke) {
+    const favs = this.state.favJokes;
+    const exists = favs.find((joke) => {
+      return joke.id === favJoke.id;
+    });
+    exists !== undefined ? this.removeFav(favJoke) : this.addFav(favJoke);
+  }
+
+  addFav(favJoke) {
+    this.state.favJokes.push(favJoke);
+    this.setState({ favJokes: this.state.favJokes });
+  }
+
+  removeFav(favJoke) {
+    const newArray = this.state.favJokes.filter((joke) => {
+      return joke.id !== favJoke.id;
+    })
+    this.setState({ favJokes: newArray });
   }
 
   render() {
@@ -32,7 +83,21 @@ class App extends Component {
         <Header />
         <RandomJoke randomJoke={this.state.randomJoke} />
         <div className='app-stuff'>
-          {React.cloneElement(this.props.children, { handleChange: this.handleChange.bind(this), num: this.state.num })}
+        {React.cloneElement(this.props.children, {
+          newName: this.state.newName,
+          displayName: this.state.displayName,
+          updateName: this.updateName.bind(this),
+          setDisplayName: this.setDisplayName.bind(this),
+          clearDisplayName: this.clearDisplayName.bind(this),
+          handleChange: this.handleNumChange.bind(this),
+          num: this.state.num,
+          getJokes: this.getJokes.bind(this),
+          jokes: this.state.jokes,
+          setFav: this.setFav.bind(this),
+          favJokes: this.state.favJokes,
+          parentalControls: this.state.parentalControls,
+          updateControls: this.updateControls.bind(this)
+        })}
         </div>
       </div>
     );

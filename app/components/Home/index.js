@@ -5,16 +5,38 @@ import Input from '../Input';
 
 class Home extends Component {
 
+
   render() {
-    const { handleChange, num } = this.props;
+    const { handleChange, num, getJokes } = this.props;
+    console.log(num)
     return (
       <div>
         <section className="joke-controller">
-          <Button name={'jokes-btn'} btnText={<Link to='/jokes'>Get Jokes</Link>} />
-          <Input name={'num-input'} handleChange={handleChange} num={num} />
-          <Button name={'favs-btn'} btnText={<Link to='/favorites'>Favorites</Link>} />
+          {window.location.hash === "#/" ?
+            <Button
+              name={ 'jokes-btn' }
+              btnText={<Link to='/jokes'>Get Jokes</Link>}
+              func={ getJokes }
+            />
+            :
+            <Button
+              name={ 'jokes-btn' }
+              btnText={ 'Get Jokes' }
+              func={ getJokes }
+            />}
+          <Input
+            name={ 'num-input' }
+            type={ 'number' }
+            handleChange={ handleChange }
+            val={ num }
+          />
+          <Button
+            name={ 'favs-btn' }
+            btnText={ <Link to='/favorites'>Favorites</Link> }
+          />
         </section>
-        {this.props.children}
+        { window.location.hash === '#/' ? <h2>Click Get Jokes!</h2> : <div /> }
+        { this.props.children }
       </div>
     );
   }
