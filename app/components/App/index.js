@@ -9,6 +9,7 @@ class App extends Component {
     super();
     this.state = {
       randomJoke: '',
+      jokes: '',
       newName: '',
       displayName: '',
       num: ''
@@ -21,6 +22,16 @@ class App extends Component {
       debugger
     }).then((data) => {
       this.setState({ randomJoke: data.value[0].joke })
+    })
+  }
+
+  getJokes() {
+    const num = this.state.num;
+    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript`).then((response) => {
+      return response.json();
+      debugger
+    }).then((data) => {
+      this.setState({ jokes: data.value })
     })
   }
 
@@ -47,7 +58,9 @@ class App extends Component {
           updateName: this.updateName.bind(this),
           setDisplayName: this.setDisplayName.bind(this),
           handleChange: this.handleNumChange.bind(this),
-          num: this.state.num
+          num: this.state.num,
+          getJokes: this.getJokes.bind(this),
+          jokes: this.state.jokes
         })}
         </div>
       </div>

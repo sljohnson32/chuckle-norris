@@ -6,14 +6,22 @@ import Input from '../Input';
 class Home extends Component {
 
   render() {
-    const { handleChange, num } = this.props;
+    const { handleChange, num, getJokes } = this.props;
     return (
       <div>
         <section className="joke-controller">
-          <Button
-            name={ 'jokes-btn' }
-            btnText={<Link to='/jokes'>Get Jokes</Link>}
-          />
+          {window.location.hash === "#/" ?
+            <Button
+              name={ 'jokes-btn' }
+              btnText={<Link to='/jokes'>Get Jokes</Link>}
+              func={ getJokes }
+            />
+            :
+            <Button
+              name={ 'jokes-btn' }
+              btnText={ 'Get Jokes' }
+              func={ getJokes }
+            />}
           <Input
             name={ 'num-input' }
             type={ 'number' }
@@ -25,7 +33,7 @@ class Home extends Component {
             btnText={ <Link to='/favorites'>Favorites</Link> }
           />
         </section>
-        {this.props.children}
+        { this.props.children }
       </div>
     );
   }
