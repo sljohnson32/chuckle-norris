@@ -10,7 +10,6 @@ const Header = () => {
       <section className="container-header">
         <h1>Chuckle Norris</h1>
         <h4>The internet's most Delta Farce joke machine.</h4>
-      </section>
       {window.location.hash === '#/settings' ?
         <Button
           name={'settings-btn'}
@@ -23,6 +22,7 @@ const Header = () => {
           btnText={<Link to='/settings'>
           Settings </Link>}
         />}
+        </section>
     </div>
   );
 }
