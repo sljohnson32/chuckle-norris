@@ -85,6 +85,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.num)
     return (
       <div>
         <Header />
