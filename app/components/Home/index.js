@@ -4,16 +4,6 @@ import Button from '../Button';
 import Input from '../Input';
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      num: ''
-    }
-  }
-
-  handleChange(newVal) {
-    this.setState({ num: newVal });
-  }
 
   render() {
     const { handleChange, num } = this.props;
@@ -27,8 +17,8 @@ class Home extends Component {
           <Input
             name={ 'num-input' }
             type={ 'number' }
-            handleChange={ this.handleChange.bind(this) }
-            val={ this.state.num }
+            handleChange={ handleChange }
+            val={ num }
           />
           <Button
             name={ 'favs-btn' }

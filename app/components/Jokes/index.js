@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Home from '../Home';
 
 class Jokes extends Component {
 
@@ -7,6 +8,7 @@ class Jokes extends Component {
   render() {
     return (
       <div>
+        <Home handleChange={ this.props.handleChange } />
         Jokes
       </div>
     );

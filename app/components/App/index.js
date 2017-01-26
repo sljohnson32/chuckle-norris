@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       randomJoke: '',
       newName: '',
-      displayName: ''
+      displayName: '',
+      num: ''
     };
   }
 
@@ -21,6 +22,10 @@ class App extends Component {
     }).then((data) => {
       this.setState({ randomJoke: data.value[0].joke })
     })
+  }
+
+  handleNumChange(newVal) {
+    this.setState({ num: newVal });
   }
 
   updateName(newName) {
@@ -40,7 +45,9 @@ class App extends Component {
         {React.cloneElement(this.props.children, {
           newName: this.state.newName,
           updateName: this.updateName.bind(this),
-          setDisplayName: this.setDisplayName.bind(this)
+          setDisplayName: this.setDisplayName.bind(this),
+          handleChange: this.handleNumChange.bind(this),
+          num: this.state.num
         })}
         </div>
       </div>
