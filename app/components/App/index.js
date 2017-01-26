@@ -82,7 +82,8 @@ class App extends Component {
           num: this.state.num,
           getJokes: this.getJokes.bind(this),
           jokes: this.state.jokes,
-          setFav: this.setFav.bind(this)
+          setFav: this.setFav.bind(this),
+          favJokes: this.state.favJokes
         })}
         </div>
       </div>

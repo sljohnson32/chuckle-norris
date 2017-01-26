@@ -11,7 +11,18 @@ const Header = () => {
         <h1>Chuckle Norris</h1>
         <h4>The internet's most Delta Farce joke machine.</h4>
       </section>
-      <Button name={'settings-btn'} btnText={<Link to='/settings'> Settings </Link>} />
+      {window.location.hash === '#/settings' ?
+        <Button
+          name={'settings-btn'}
+          btnText={<Link to='/jokes'>
+          Jokes </Link>}
+        />
+        :
+        <Button
+          name={'settings-btn'}
+          btnText={<Link to='/settings'>
+          Settings </Link>}
+        />}
     </div>
   );
 }
