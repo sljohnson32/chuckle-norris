@@ -12,7 +12,8 @@ class App extends Component {
       jokes: '',
       newName: '',
       displayName: '',
-      num: ''
+      num: '',
+      favJokes: []
     };
   }
 
@@ -47,6 +48,26 @@ class App extends Component {
     this.setState({ displayName: this.state.newName });
   }
 
+  setFav(favJoke) {
+    const favs = this.state.favJokes;
+    const exists = favs.find((joke) => {
+      return joke.id === favJoke.id;
+    });
+    exists !== undefined ? this.removeFav(favJoke) : this.addFav(favJoke);
+  }
+
+  addFav(favJoke) {
+    this.state.favJokes.push(favJoke);
+    this.setState({ favJokes: this.state.favJokes });
+  }
+
+  removeFav(favJoke) {
+    const newArray = this.state.favJokes.filter((joke) => {
+      return joke.id !== favJoke.id;
+    })
+    this.setState({ favJokes: newArray });
+  }
+
   render() {
     return (
       <div>
@@ -60,7 +81,8 @@ class App extends Component {
           handleChange: this.handleNumChange.bind(this),
           num: this.state.num,
           getJokes: this.getJokes.bind(this),
-          jokes: this.state.jokes
+          jokes: this.state.jokes,
+          setFav: this.setFav.bind(this)
         })}
         </div>
       </div>
