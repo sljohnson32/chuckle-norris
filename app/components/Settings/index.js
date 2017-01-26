@@ -5,7 +5,7 @@ import Button from '../Button';
 class Settings extends Component {
 
   render() {
-    const { newName, updateName, setDisplayName } = this.props;
+    const { newName, displayName, updateName, setDisplayName, clearDisplayName } = this.props;
     return (
       <div>
         <h4>Set Name:</h4>
@@ -17,10 +17,16 @@ class Settings extends Component {
         />
         <Button
           btnText={ 'SET' }
-          className={ 'setName-btn' }
+          name={ 'setName-btn' }
+          disableTrigger={ newName }
           func={ setDisplayName }
         />
-
+        <Button
+          btnText={ 'RESET' }
+          name={ 'resetName-btn' }
+          disableTrigger={ displayName }
+          func={ clearDisplayName }
+        />
       </div>
     );
   }

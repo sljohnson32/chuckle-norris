@@ -6,13 +6,13 @@ const Button = (props) => {
   return (
     func ?
       <button
-        className={name}
+        className={ name }
         onClick={ () => func() }
-      >{btnText}</button>
+      >{ btnText }</button>
       :
       <button
-        className={name}
-      >{btnText}</button>
+        className={ name }
+      >{ btnText }</button>
   );
 }
 

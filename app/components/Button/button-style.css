@@ -1,6 +1,6 @@
 $button-background: rgb(192, 192, 192);
 
-.button {
+/*.settings-btn {
   background-color: $button-background;
   text-decoration: none;
   border: none;
@@ -17,4 +17,4 @@ $button-background: rgb(192, 192, 192);
     cursor: default;
     background-color: $button-background;
   }
-}
+}*/

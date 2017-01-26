@@ -33,6 +33,7 @@ class Home extends Component {
             btnText={ <Link to='/favorites'>Favorites</Link> }
           />
         </section>
+        { window.location.hash === '#/' ? <h2>Click Get Jokes!</h2> : <div /> }
         { this.props.children }
       </div>
     );

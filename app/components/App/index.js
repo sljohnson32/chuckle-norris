@@ -48,6 +48,10 @@ class App extends Component {
     this.setState({ displayName: this.state.newName });
   }
 
+  clearDisplayName() {
+    this.setState({ displayName: '' })
+  }
+
   setFav(favJoke) {
     const favs = this.state.favJokes;
     const exists = favs.find((joke) => {
@@ -76,8 +80,10 @@ class App extends Component {
         <div className='app-stuff'>
         {React.cloneElement(this.props.children, {
           newName: this.state.newName,
+          displayName: this.state.displayName,
           updateName: this.updateName.bind(this),
           setDisplayName: this.setDisplayName.bind(this),
+          clearDisplayName: this.clearDisplayName.bind(this),
           handleChange: this.handleNumChange.bind(this),
           num: this.state.num,
           getJokes: this.getJokes.bind(this),
