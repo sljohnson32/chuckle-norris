@@ -17,4 +17,9 @@
 //     wrapper.simulate('click');
 //     expect(logStuff.calledOnce).to.equal(true);
 //   });
+//   it('Each joke has a star icon button for favorites', () => {
+//    const wrapper = shallow(<Favs favJokes={anArray}/>);
+//    const button = wrapper.find('Button').last()
+//    expect(button.prop('btnText')).to.equal('★')
+// });
 // });
