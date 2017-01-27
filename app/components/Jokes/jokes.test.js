@@ -1,20 +1,17 @@
-// import React from 'react';
-// import { mount, shallow } from 'enzyme';
-// import {expect} from 'chai';
-// import sinon from 'sinon';
-//
-// import App from './index';
-// import Button from '../Button';
-//
-// describe('<App />', function () {
-//   it('should display a single h1 tag', function () {
-//     const wrapper = shallow(<Header/>);
-//     expect(wrapper.find('h1')).to.have.length(1);
-//   });
-//   it('should trigger our logStuff function', () => {
-//     const logStuff = sinon.spy();
-//     const wrapper = mount(<Button handleClick={logStuff} />);
-//     wrapper.simulate('click');
-//     expect(logStuff.calledOnce).to.equal(true);
-//   });
-// });
+import React from 'react';
+import { mount, shallow } from 'enzyme';
+import {expect} from 'chai';
+import sinon from 'sinon';
+
+import Jokes from './index';
+
+describe('<Jokes />', function () {
+
+  const anArray = ['stuff', 'other stuff', 'some stuff']
+
+  it('should render one div', () => {
+    const wrapper = shallow(<Jokes jokes={anArray} />);
+    expect(wrapper.find('div')).to.have.length(1);
+  });
+  
+});
