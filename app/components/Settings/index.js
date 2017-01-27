@@ -7,8 +7,7 @@ import ParentalControls from '../ParentalControls';
 class Settings extends Component {
 
   render() {
-    const { newName, displayName, updateName, setDisplayName, clearDisplayName, updateControls } = this.props;
-
+    const { newName, displayName, updateName, setDisplayName, clearDisplayName, updateControls, parentalControls } = this.props;
     return (
       <div>
         <h4>Set Name:</h4>
@@ -30,10 +29,24 @@ class Settings extends Component {
           disableTrigger={ !displayName }
           func={ clearDisplayName }
         />
-        <ParentalControls updateControls={ updateControls } />
+        <ParentalControls
+          updateControls={ updateControls }
+          parentalControls={ parentalControls }
+        />
       </div>
     );
   }
+}
+
+Settings.propTypes = {
+  newName: React.PropTypes.string,
+  displayName: React.PropTypes.string,
+  updateName: React.PropTypes.func,
+  setDisplayName: React.PropTypes.func,
+  clearDisplayName: React.PropTypes.func,
+  updateContorls: React.PropTypes.func,
+  parentalControls: React.PropTypes.bool,
+
 }
 
 export default Settings;

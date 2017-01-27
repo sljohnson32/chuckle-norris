@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../Home';
 import JokeCard from '../JokeCard';
+import './jokes-style';
 
 class Jokes extends Component {
 
@@ -14,6 +15,13 @@ class Jokes extends Component {
       </div>
     );
   }
+}
+
+Jokes.propTypes = {
+  handleChange: React.PropTypes.func,
+  getJokes: React.PropTypes.func,
+  jokes: React.PropTypes.array,
+  setFav: React.PropTypes.func
 }
 
 export default Jokes;

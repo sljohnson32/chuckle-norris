@@ -1,4 +1,5 @@
 import React from 'react';
+import './input-style';
 
 const Input = (props) => {
   const { name, type, handleChange, val } = props;
@@ -10,6 +11,13 @@ const Input = (props) => {
       onChange={ (e) => handleChange(e.target.value) }
     />
   );
+}
+
+Input.propTypes = {
+  name: React.PropTypes.string,
+  type: React.PropTypes.string,
+  handleChange: React.PropTypes.func,
+  val: React.PropTypes.string
 }
 
 export default Input;

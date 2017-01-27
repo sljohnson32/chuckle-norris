@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Header from '../Header'
 import RandomJoke from '../RandomJoke'
+import firstName from './Logic/firstName'
+import lastName from './Logic/lastName'
+import PlaySound from '../PlaySound'
 import '../../styles'
 
 class App extends Component {
@@ -9,9 +12,9 @@ class App extends Component {
     super();
     this.state = {
       randomJoke: '',
-      jokes: '',
+      jokes: [],
       newName: '',
-      displayName: '',
+      displayName: 'Chuck Norris',
       num: '',
       favJokes: [],
       parentalControls: false
@@ -21,7 +24,6 @@ class App extends Component {
   componentDidMount() {
     fetch('http://api.icndb.com/jokes/random/1?escape=javascript').then((response) => {
       return response.json();
-      debugger
     }).then((data) => {
       this.setState({ randomJoke: data.value[0].joke })
     })
@@ -29,9 +31,13 @@ class App extends Component {
 
   getJokes() {
     const num = this.state.num;
-    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript`).then((response) => {
+    const first = firstName(this.state.displayName);
+    const last = lastName(this.state.displayName);
+    const controls = this.state.parentalControls ? '&exclude=[explicit]' : '';
+    const name = this.state.displayName ? `&firstName=${first}&lastName=${last}` : '';
+
+    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript${controls}${name}`).then((response) => {
       return response.json();
-      debugger
     }).then((data) => {
       this.setState({ jokes: data.value })
     })
@@ -47,6 +53,7 @@ class App extends Component {
 
   setDisplayName() {
     this.setState({ displayName: this.state.newName });
+    // PlaySound('one');
   }
 
   clearDisplayName() {
@@ -82,7 +89,6 @@ class App extends Component {
       <div>
         <Header />
         <RandomJoke randomJoke={this.state.randomJoke} />
-        <div className='app-stuff'>
         {React.cloneElement(this.props.children, {
           newName: this.state.newName,
           displayName: this.state.displayName,
@@ -98,10 +104,13 @@ class App extends Component {
           parentalControls: this.state.parentalControls,
           updateControls: this.updateControls.bind(this)
         })}
-        </div>
       </div>
     );
   }
+}
+
+App.propTypes = {
+  children: React.PropTypes.element
 }
 
 export default App;

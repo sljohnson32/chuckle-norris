@@ -1,20 +1,54 @@
 $button-background: rgb(192, 192, 192);
 
-button.settings-btn {
+a {
+  text-decoration: none;
+  color: #37474f;
+}
+
+button {
   background-color: $button-background;
+  font-family: 'Karla', sans-serif;
   text-decoration: none;
   border: none;
   outline: none;
-  border-radius: 5px;
-  margin: 2.5px;
-  height: 30px;
+  text-align: center;
   &:hover {
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
+    background-color: #cfd8dc;
   }
   &:disabled {
+    background-color: darkgray;
     color: gray;
     cursor: default;
-    background-color: $button-background;
   }
+}
+
+button.settings-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  height: 62px;
+  width: 65px;
+}
+
+.jokes-btn, .favs-btn {
+  border-radius: 5px;
+}
+.jokes-btn {
+  height: 40px;
+  width: 180px;
+  margin: 20px 10px 0 20px;
+}
+.favs-btn {
+  height: 30px;
+  width: 100px;
+  margin-top: 20px;
+}
+.setName-btn, .resetName-btn {
+  margin: 3px;
+  border-radius: 5px;
+  width: auto;
+  height: 30px;
 }

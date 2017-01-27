@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import './header-style';
-
 import Button from '../Button';
 
 const Header = () => {
@@ -13,7 +12,7 @@ const Header = () => {
       {window.location.hash === '#/settings' ?
         <Button
           name={'settings-btn'}
-          btnText={<Link to='/jokes'>
+          btnText={<Link to='/'>
           Jokes </Link>}
         />
         :

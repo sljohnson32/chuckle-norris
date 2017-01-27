@@ -3,7 +3,6 @@ import './button-style';
 
 const Button = (props) => {
   const { name, func, btnText, disableTrigger } = props;
-  console.log(disableTrigger)
   return (
     func ?
       <button
@@ -17,6 +16,13 @@ const Button = (props) => {
         disabled={disableTrigger}
       >{ btnText }</button>
   );
+}
+
+Button.propTypes = {
+  name: React.PropTypes.string,
+  func: React.PropTypes.func,
+  // btnText: React.PropTypes.string
+  disableTrigger: React.PropTypes.bool
 }
 
 export default Button;

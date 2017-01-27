@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button';
+import './jokecard-style';
 
 const JokeCard = (props) => {
   const { joke, setFav } = props;
@@ -9,6 +10,11 @@ const JokeCard = (props) => {
       <Button className={ 'fav-btn' } func={ () => setFav(joke) } btnText={'☆'} />
     </div>
   );
+}
+
+JokeCard.propTypes = {
+  joke: React.PropTypes.object,
+  setFav: React.PropTypes.func
 }
 
 export default JokeCard;

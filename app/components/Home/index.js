@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Button from '../Button';
 import Input from '../Input';
+import './home-style';
 
 class Home extends Component {
 
-
   render() {
     const { handleChange, num, getJokes } = this.props;
-    console.log(num)
     return (
-      <div>
+      <div className='home'>
         <section className="joke-controller">
           {window.location.hash === "#/" ?
             <Button
@@ -30,6 +29,8 @@ class Home extends Component {
             handleChange={ handleChange }
             val={ num }
           />
+        </section>
+        <section className='favs'>
           <Button
             name={ 'favs-btn' }
             btnText={ <Link to='/favorites'>Favorites</Link> }
@@ -40,6 +41,12 @@ class Home extends Component {
       </div>
     );
   }
+}
+
+Home.propTypes = {
+  handleChange: React.PropTypes.func,
+  num: React.PropTypes.string,
+  getJokes: React.PropTypes.func
 }
 
 export default Home;
