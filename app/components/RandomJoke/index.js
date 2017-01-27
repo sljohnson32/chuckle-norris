@@ -4,10 +4,8 @@ import './randomjoke-style';
 const RandomJoke = (props) => {
   const { randomJoke } = props;
   return (
-    <div>
-      <div className='random-joke'>
-        { randomJoke }
-      </div>
+    <div className='random-joke'>
+      { randomJoke }
     </div>
   );
 }
