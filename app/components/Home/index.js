@@ -8,11 +8,13 @@ class Home extends Component {
 
   render() {
     const { handleChange, num, getJokes } = this.props;
+    console.log(num);
     return (
       <div className='home'>
         <section className="joke-controller">
           <Button
             name={ 'jokes-btn' }
+            disableTrigger={ !num }
             btnText={<Link to='/jokes'>Get Jokes</Link>}
             func={ getJokes }
           />
