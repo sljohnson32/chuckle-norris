@@ -64,12 +64,23 @@ class App extends Component {
     this.setState({ parentalControls: !this.state.parentalControls })
   }
 
-  setFav(favJoke) {
-    const favs = this.state.favJokes;
-    const exists = favs.find((joke) => {
-      return joke.id === favJoke.id;
-    });
-    exists !== undefined ? this.removeFav(favJoke) : this.addFav(favJoke);
+  // setFav(favJoke) {
+  //   const favs = this.state.favJokes;
+  //   const exists = favs.find((joke) => {
+  //     return joke.id === favJoke.id;
+  //   });
+  //   exists !== undefined ? this.removeFav(favJoke) : this.addFav(favJoke);
+  // }
+
+  setFav(id) {
+    let updatedJokes = this.state.jokes.map(joke => {
+      if(joke.id === id) {
+        joke.fav = !joke.fav
+        joke.fav ? this.addFav(joke) : this.removeFav(joke)
+      }
+      return joke
+    })
+    this.setState({ jokes: updatedJokes })
   }
 
   addFav(favJoke) {

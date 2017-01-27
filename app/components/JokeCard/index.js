@@ -3,18 +3,22 @@ import Button from '../Button';
 import './jokecard-style';
 
 const JokeCard = (props) => {
-  const { joke, setFav } = props;
+  const { joke, setFav, fav } = props;
   return (
-    <div>
+    <div className='joke-card'>
       {joke.joke}
-      <Button className={ 'fav-btn' } func={ () => setFav(joke) } btnText={'☆'} />
+      <Button
+        name={`fav-btn ${fav ? 'favorite' : ''}`}
+        func={ () => setFav(joke.id) }
+        btnText={'★'} />
     </div>
   );
 }
 
 JokeCard.propTypes = {
   joke: React.PropTypes.object,
-  setFav: React.PropTypes.func
+  setFav: React.PropTypes.func,
+  fave: React.PropTypes.bool
 }
 
 export default JokeCard;

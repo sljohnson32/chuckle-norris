@@ -7,11 +7,13 @@ class Jokes extends Component {
 
   render() {
     const { handleChange, getJokes, jokes, setFav } = this.props;
-    const jokeCards = jokes.length > 0 ? jokes.map((joke, i) => <JokeCard key={ i } joke={ joke } setFav={ setFav } />) : null;
+    const jokeCards = jokes.length > 0 ? jokes.map((joke, i) => <JokeCard key={ i } joke={ joke } fav={ joke.fav } setFav={ setFav } />) : null;
     return (
       <div>
         <Home handleChange={ handleChange } getJokes={ getJokes } />
-        {jokeCards}
+        <section className='jokes-container'>
+          {jokeCards}
+        </section>
       </div>
     );
   }

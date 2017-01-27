@@ -44,11 +44,29 @@ button.settings-btn {
 .favs-btn {
   height: 30px;
   width: 100px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .setName-btn, .resetName-btn {
   margin: 3px;
   border-radius: 5px;
   width: auto;
   height: 30px;
+}
+.fav-btn {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  font-size: 20px;
+  color: white;
+  outline: none;
+  bottom: 10px;
+  right:0;
+  &:hover {
+    cursor: pointer;
+    color: #fde82b;
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.favorite {
+  color: #fde82b;
 }
