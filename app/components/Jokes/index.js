@@ -11,7 +11,9 @@ class Jokes extends Component {
     return (
       <div>
         <Home handleChange={ handleChange } getJokes={ getJokes } />
-        {jokeCards}
+        <section className='jokes-container'>
+          {jokeCards}
+        </section>
       </div>
     );
   }

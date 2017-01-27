@@ -52,3 +52,21 @@ button.settings-btn {
   width: auto;
   height: 30px;
 }
+.fav-btn {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  font-size: 20px;
+  color: white;
+  outline: none;
+  bottom: 0;
+  right:0;
+  &:hover {
+    cursor: pointer;
+    color: #fde82b;
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.favorite {
+  color: #fde82b;
+}

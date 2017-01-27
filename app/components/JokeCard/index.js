@@ -5,12 +5,12 @@ import './jokecard-style';
 const JokeCard = (props) => {
   const { joke, setFav, fav } = props;
   return (
-    <div>
+    <div className='joke-card'>
       {joke.joke}
       <Button
-        className={`fave-btn ${fav ? 'favorite' : ''}`}
+        name={`fav-btn ${fav ? 'favorite' : ''}`}
         func={ () => setFav(joke.id) }
-        btnText={'☆'} />
+        btnText={'★'} />
     </div>
   );
 }
