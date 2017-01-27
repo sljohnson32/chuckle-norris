@@ -11,18 +11,11 @@ class Home extends Component {
     return (
       <div className='home'>
         <section className="joke-controller">
-          {window.location.hash === "#/" ?
-            <Button
-              name={ 'jokes-btn' }
-              btnText={<Link to='/jokes'>Get Jokes</Link>}
-              func={ getJokes }
-            />
-            :
-            <Button
-              name={ 'jokes-btn' }
-              btnText={ 'Get Jokes' }
-              func={ getJokes }
-            />}
+          <Button
+            name={ 'jokes-btn' }
+            btnText={<Link to='/jokes'>Get Jokes</Link>}
+            func={ getJokes }
+          />
           <Input
             name={ 'num-input' }
             type={ 'number' }
