@@ -40,4 +40,10 @@ class Home extends Component {
   }
 }
 
+Home.propTypes = {
+  handleChange: React.PropTypes.func,
+  num: React.PropTypes.string,
+  getJokes: React.PropTypes.func
+}
+
 export default Home;

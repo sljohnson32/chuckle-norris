@@ -1,12 +1,16 @@
 import React from 'react';
 
 const RandomJoke = (props) => {
-  const {randomJoke} = props;
+  const { randomJoke } = props;
   return (
-    <div>
-      {randomJoke}
+    <div className='random-joke'>
+      { randomJoke }
     </div>
   );
+}
+
+RandomJoke.propTypes = {
+  randomJoke: React.PropTypes.string
 }
 
 export default RandomJoke;

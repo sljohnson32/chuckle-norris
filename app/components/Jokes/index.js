@@ -16,4 +16,11 @@ class Jokes extends Component {
   }
 }
 
+Jokes.propTypes = {
+  handleChange: React.PropTypes.func,
+  getJokes: React.PropTypes.func,
+  jokes: React.PropTypes.array,
+  setFav: React.PropTypes.func
+}
+
 export default Jokes;

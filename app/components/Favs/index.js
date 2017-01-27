@@ -16,4 +16,11 @@ class Favs extends Component {
   }
 }
 
+Favs.propTypes = {
+  favJokes: React.PropTypes.array,
+  setFav: React.PropTypes.func,
+  handleChange: React.PropTypes.func,
+  getJokes: React.PropTypes.func
+}
+
 export default Favs;

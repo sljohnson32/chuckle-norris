@@ -11,4 +11,9 @@ const JokeCard = (props) => {
   );
 }
 
+JokeCard.propTypes = {
+  joke: React.PropTypes.object,
+  setFav: React.PropTypes.func
+}
+
 export default JokeCard;

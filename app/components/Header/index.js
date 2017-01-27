@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import './header-style';
-
 import Button from '../Button';
 
 const Header = () => {

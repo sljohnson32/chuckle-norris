@@ -4,7 +4,7 @@ import Header from '../Header'
 import RandomJoke from '../RandomJoke'
 import firstName from './Logic/firstName'
 import lastName from './Logic/lastName'
-import buildURL from './Logic/buildURL'
+import PlaySound from '../PlaySound'
 import '../../styles'
 
 class App extends Component {
@@ -53,6 +53,7 @@ class App extends Component {
 
   setDisplayName() {
     this.setState({ displayName: this.state.newName });
+    // PlaySound('one');
   }
 
   clearDisplayName() {
@@ -108,6 +109,10 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  children: React.PropTypes.element
 }
 
 export default App;

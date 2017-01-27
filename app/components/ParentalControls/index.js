@@ -6,16 +6,22 @@ const ParentalControls = (props) => {
   const { parentalControls, updateControls } = props;
   return (
     <div>
+      <h3 className='parental-controls'>Parental Controls: </h3>
       <label className="switch">
-        <input type="checkbox" onClick={ () => updateControls() }/>
+        <input
+          type="checkbox"
+          checked={ parentalControls }
+          onClick={ () => updateControls() }
+        />
         <div className="slider round"></div>
       </label>
     </div>
   );
 }
 
-export default ParentalControls;
+ParentalControls.propTypes = {
+  parentalControls: React.PropTypes.bool,
+  updateControls: React.PropTypes.func
+}
 
-// <button
-// onClick={ () => updateControls() }
-// >Update Parental Controls</button>
+export default ParentalControls;
