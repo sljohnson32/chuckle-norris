@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import ParentalControls from '../ParentalControls';
+import './settings-style';
 
 
 class Settings extends Component {
@@ -9,7 +10,7 @@ class Settings extends Component {
   render() {
     const { newName, displayName, updateName, setDisplayName, clearDisplayName, updateControls, parentalControls } = this.props;
     return (
-      <div>
+      <div className='settings'>
         <h4>Set Name:</h4>
         <Input
           name={ 'name-input' }
