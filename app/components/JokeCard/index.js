@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button';
+import './jokecard-style';
 
 const JokeCard = (props) => {
   const { joke, setFav } = props;

@@ -12,7 +12,7 @@ const Header = () => {
       {window.location.hash === '#/settings' ?
         <Button
           name={'settings-btn'}
-          btnText={<Link to='/jokes'>
+          btnText={<Link to='/'>
           Jokes </Link>}
         />
         :

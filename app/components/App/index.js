@@ -12,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
       randomJoke: '',
-      jokes: '',
+      jokes: [],
       newName: '',
       displayName: 'Chuck Norris',
       num: '',
@@ -89,7 +89,6 @@ class App extends Component {
       <div>
         <Header />
         <RandomJoke randomJoke={this.state.randomJoke} />
-        <div className='app-stuff'>
         {React.cloneElement(this.props.children, {
           newName: this.state.newName,
           displayName: this.state.displayName,
@@ -105,7 +104,6 @@ class App extends Component {
           parentalControls: this.state.parentalControls,
           updateControls: this.updateControls.bind(this)
         })}
-        </div>
       </div>
     );
   }

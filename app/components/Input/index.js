@@ -1,4 +1,5 @@
 import React from 'react';
+import './input-style';
 
 const Input = (props) => {
   const { name, type, handleChange, val } = props;

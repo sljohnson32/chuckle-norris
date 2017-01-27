@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../Home';
 import JokeCard from '../JokeCard';
+import './jokes-style';
 
 class Jokes extends Component {
 
