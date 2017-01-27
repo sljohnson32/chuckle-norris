@@ -8,7 +8,6 @@ class Settings extends Component {
 
   render() {
     const { newName, displayName, updateName, setDisplayName, clearDisplayName, updateControls } = this.props;
-
     return (
       <div>
         <h4>Set Name:</h4>

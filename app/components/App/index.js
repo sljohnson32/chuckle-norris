@@ -24,7 +24,6 @@ class App extends Component {
   componentDidMount() {
     fetch('http://api.icndb.com/jokes/random/1?escape=javascript').then((response) => {
       return response.json();
-      debugger
     }).then((data) => {
       this.setState({ randomJoke: data.value[0].joke })
     })
@@ -85,7 +84,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.num)
     return (
       <div>
         <Header />

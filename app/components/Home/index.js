@@ -5,7 +5,6 @@ import Input from '../Input';
 
 class Home extends Component {
 
-
   render() {
     const { handleChange, num, getJokes } = this.props;
     return (
