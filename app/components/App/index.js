@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://api.icndb.com/jokes/random/1?escape=javascript').then((response) => {
+    fetch('https://api.icndb.com/jokes/random/1?escape=javascript').then((response) => {
       return response.json();
     }).then((data) => {
       this.setState({ randomJoke: data.value[0].joke })
@@ -36,7 +36,7 @@ class App extends Component {
     const controls = this.state.parentalControls ? '&exclude=[explicit]' : '';
     const name = this.state.displayName ? `&firstName=${first}&lastName=${last}` : '';
 
-    fetch(`http://api.icndb.com/jokes/random/${num}?escape=javascript${controls}${name}`).then((response) => {
+    fetch(`https://api.icndb.com/jokes/random/${num}?escape=javascript${controls}${name}`).then((response) => {
       return response.json();
     }).then((data) => {
       this.setState({ jokes: data.value })
