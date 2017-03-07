@@ -1,7 +1,7 @@
 ## Chuckle Norris
 ### A web application that renders random Chuck Norris jokes using an open "Chuck Norris Joke" API and Reactjs.
 
-## Project Screen Shot(s)
+## Project Screen Shot
 
 ![My image](./screenshot.png)
 
