@@ -6,11 +6,11 @@ import './jokes-style';
 class Jokes extends Component {
 
   render() {
-    const { handleChange, getJokes, jokes, setFav } = this.props;
+    const { handleChange, getJokes, jokes, setFav, num } = this.props;
     const jokeCards = jokes.length > 0 ? jokes.map((joke, i) => <JokeCard key={ i } joke={ joke } fav={ joke.fav } setFav={ setFav } />) : null;
     return (
       <div>
-        <Home handleChange={ handleChange } getJokes={ getJokes } />
+        <Home num={ num } handleChange={ handleChange } getJokes={ getJokes } />
         <section className='jokes-container'>
           {jokeCards}
         </section>

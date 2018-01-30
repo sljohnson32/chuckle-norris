@@ -14,8 +14,8 @@ class Home extends Component {
         <section className="joke-controller">
           <Button
             name={ 'jokes-btn' }
-            disableTrigger={ !num }
-            btnText={<Link to='/jokes'>Get Jokes</Link>}
+            disableTrigger={ num == '0' }
+            btnText={<Link to='/jokes' className={ num == '0' && 'disable-link' }>Get Jokes</Link>}
             func={ getJokes }
           />
           <Input

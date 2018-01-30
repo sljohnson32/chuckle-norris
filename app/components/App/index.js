@@ -15,7 +15,7 @@ class App extends Component {
       jokes: [],
       newName: '',
       displayName: 'Chuck Norris',
-      num: '',
+      num: '0',
       favJokes: [],
       parentalControls: false
     };
