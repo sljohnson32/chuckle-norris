@@ -21,6 +21,7 @@ class Home extends Component {
             name={ 'num-input' }
             type={ 'number' }
             handleChange={ handleChange }
+            val={ num }
           />
         </section>
         <section className='favs'>
