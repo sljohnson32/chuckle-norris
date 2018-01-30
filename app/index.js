@@ -7,10 +7,10 @@ import Jokes from './components/Jokes';
 import Settings from './components/Settings';
 import Favs from './components/Favs';
 import { PageNotFound } from './components/PageNotFound';
-import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
 
 render(
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="jokes" component={Jokes} />
