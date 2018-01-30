@@ -15,7 +15,7 @@ class App extends Component {
       jokes: [],
       newName: '',
       displayName: 'Chuck Norris',
-      num: '',
+      num: '0',
       favJokes: [],
       parentalControls: false
     };
@@ -63,14 +63,6 @@ class App extends Component {
   updateControls() {
     this.setState({ parentalControls: !this.state.parentalControls })
   }
-
-  // setFav(favJoke) {
-  //   const favs = this.state.favJokes;
-  //   const exists = favs.find((joke) => {
-  //     return joke.id === favJoke.id;
-  //   });
-  //   exists !== undefined ? this.removeFav(favJoke) : this.addFav(favJoke);
-  // }
 
   setFav(id) {
     let updatedJokes = this.state.jokes.map(joke => {

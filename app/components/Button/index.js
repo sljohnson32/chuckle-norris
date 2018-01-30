@@ -21,7 +21,6 @@ const Button = (props) => {
 Button.propTypes = {
   name: React.PropTypes.string,
   func: React.PropTypes.func,
-  // btnText: React.PropTypes.string
   disableTrigger: React.PropTypes.bool
 }
 
