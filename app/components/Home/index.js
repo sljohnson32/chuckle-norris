@@ -13,7 +13,8 @@ class Home extends Component {
         <section className="joke-controller">
           <Button
             name={ 'jokes-btn' }
-            btnText={<Link to='/jokes'>Get Jokes</Link>}
+            disableTrigger={ num == '0' }
+            btnText={<Link to='/jokes' className={ num == '0' && 'disable-link' }>Get Jokes</Link>}
             func={ getJokes }
           />
           <Input
@@ -28,7 +29,7 @@ class Home extends Component {
             btnText={ <Link to='/favorites'>Favorites</Link> }
           />
         </section>
-        { window.location.hash === '#/' ? <h2>Click Get Jokes!</h2> : <div /> }
+        { window.location.pathname === '/' ? <h2>Click Get Jokes!</h2> : <div /> }
         { this.props.children }
       </div>
     );

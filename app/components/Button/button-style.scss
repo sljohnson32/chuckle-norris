@@ -70,3 +70,8 @@ button.settings-btn {
 .favorite {
   color: #fde82b;
 }
+
+.disable-link {
+  pointer-events: none;
+  cursor: default;
+}
