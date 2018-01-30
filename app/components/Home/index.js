@@ -7,7 +7,7 @@ import './home-style';
 class Home extends Component {
 
   render() {
-    const { handleChange, getJokes } = this.props;
+    const { handleChange, getJokes, num } = this.props;
     return (
       <div className='home'>
         <section className="joke-controller">
