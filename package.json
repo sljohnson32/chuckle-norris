@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --watch",
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "mocha -w --compilers js:babel-core/register --require helpers/test-setup.js app/**/*.test.js"
   },
   "author": "",
