@@ -7,7 +7,7 @@ import './home-style';
 class Home extends Component {
 
   render() {
-    const { handleChange, num, getJokes } = this.props;
+    const { handleChange, getJokes } = this.props;
     return (
       <div className='home'>
         <section className="joke-controller">
@@ -20,7 +20,6 @@ class Home extends Component {
             name={ 'num-input' }
             type={ 'number' }
             handleChange={ handleChange }
-            val={ num }
           />
         </section>
         <section className='favs'>
