@@ -27,7 +27,7 @@ class Settings extends Component {
         <Button
           btnText={ 'RESET' }
           name={ 'resetName-btn' }
-          disableTrigger={ !displayName }
+          disableTrigger={ displayName == "Chuck Norris" }
           func={ clearDisplayName }
         />
         <ParentalControls

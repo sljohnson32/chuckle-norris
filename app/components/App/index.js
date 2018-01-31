@@ -11,9 +11,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      randomJoke: '',
+      randomJoke: "",
       jokes: [],
-      newName: '',
+      newName: "",
       displayName: 'Chuck Norris',
       num: '0',
       favJokes: [],
@@ -57,7 +57,7 @@ class App extends Component {
   }
 
   clearDisplayName() {
-    this.setState({ displayName: '' })
+    this.setState({ displayName: "Chuck Norris", newName: "" })
   }
 
   updateControls() {
